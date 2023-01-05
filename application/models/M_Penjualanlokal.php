@@ -216,10 +216,10 @@ class M_Penjualanlokal extends CI_MODEL
 
   public function deleteData($reccu)
   {
-    return $this->db->delete('detail_agen', ['reccu' => $reccu]);
-    return $this->db->delete('detail_cab', ['reccu' => $reccu]);
-    return $this->db->delete('detail_lokal', ['reccu' => $reccu]);
-    return $this->db->delete('paket', ['reccu' => $reccu]);
-    return $this->db->delete('track', ['reccu' => $reccu]);
+    $this->db->delete('detail_agen', ['reccu' => $reccu]);
+    $this->db->delete('detail_cab', ['reccu' => $reccu]);
+    $this->db->delete('detail_lokal', ['reccu' => $reccu]);
+    $this->db->delete('paket', ['reccu' => $reccu]);
+    $this->db->delete('track', ['reccu' => $reccu]);
   }
 }

@@ -136,4 +136,10 @@ class M_Penjualanagen extends CI_MODEL
     $this->db->update('paket', $data, $where);
     $this->db->update('track', $datatrack, $where);
   }
+
+  public function deleteData($reccu)
+  {
+    $this->db->delete('paket', ['reccu' => $reccu]);
+    $this->db->delete('track', ['reccu' => $reccu]);
+  }
 }

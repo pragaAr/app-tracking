@@ -81,4 +81,11 @@ class Penjualanagen extends CI_Controller
     $this->load->view('penjualan/detail-penjualan', $data);
     $this->load->view('template/footer');
   }
+
+  public function delete($reccu)
+  {
+    $this->Penagen->deleteData($reccu);
+    $this->session->set_flashdata('deleted', 'Data berhasil dihapus!');
+    redirect('penjualanagen');
+  }
 }

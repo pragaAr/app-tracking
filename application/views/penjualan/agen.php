@@ -6,14 +6,24 @@
    <section class="section">
      <div class="section-header">
        <h1><?= $title ?></h1>
-       <div class="section-header-breadcrumb">
-         <div class="breadcrumb-item">
-           <a href="<?= base_url('penjualanagen') ?>" class="btn btn-primary" data-toggle="modal" data-target="#addPenagen">
-             <i class="fas fa-plus"></i>
-             Tambah
-           </a>
+
+       <?php if ($this->session->userdata('role_access') == 'admcab') { ?>
+         <div class="section-header-breadcrumb">
+           <div class="breadcrumb-item">
+
+           </div>
          </div>
-       </div>
+       <?php } else { ?>
+         <div class="section-header-breadcrumb">
+           <div class="breadcrumb-item">
+             <a href="<?= base_url('penjualanagen') ?>" class="btn btn-primary" data-toggle="modal" data-target="#addPenagen">
+               <i class="fas fa-plus"></i>
+               Tambah
+             </a>
+           </div>
+         </div>
+       <?php } ?>
+
      </div>
 
      <div class="section-body">
